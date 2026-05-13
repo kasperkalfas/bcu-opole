@@ -24,20 +24,34 @@ W 30 minut pokazać 2 proste automatyzacje w n8n z darmowym modelem Gemini:
 
 ## Krok 2: Wspólna konfiguracja HTTP Request w n8n
 
-W obu ćwiczeniach użyjesz tego samego podejścia:
+W obu ćwiczeniach użyjesz tego samego node `HTTP Request`. Ustaw go raz, a potem tylko podmieniaj treść promptu.
 
-1. Dodaj node `HTTP Request`.
-2. Method: `POST`.
-3. URL:
-   `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent`
-4. Query Parameters:
-   - `key` = `TWÓJ_KLUCZ_GEMINI`
-5. Send Body: `JSON`.
-6. Header `Content-Type: application/json`.
-7. W Body wysyłaj pole `contents` z promptem.
+### Dokładna konfiguracja node
 
-Minimalny format odpowiedzi Gemini, z którego korzystamy:
-- wynik tekstowy będzie w: `candidates[0].content.parts[0].text`
+1. Kliknij **+ Add node** i wybierz `HTTP Request`.
+2. W zakładce parametrów ustaw:
+   - **Method**: `POST`
+   - **URL**: `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent`
+3. W sekcji **Query Parameters** dodaj:
+   - **Name**: `key`
+   - **Value**: `TWÓJ_KLUCZ_GEMINI`
+4. W sekcji **Send Body** wybierz tryb `JSON`.
+5. W sekcji **Headers** dodaj:
+   - **Content-Type**: `application/json`
+6. W polu **Body** wklej JSON z promptem (oddzielny dla każdego ćwiczenia).
+
+### Co sprawdzić przed uruchomieniem
+
+- Czy klucz API jest w Query Parameter `key`, a nie w body.
+- Czy JSON zaczyna się od `{` i kończy `}`.
+- Czy zmienna z poprzedniego noda jest wpisana jako expression, np. `{{$json.tekst_zrodlowy}}`.
+
+### Gdzie jest wynik z Gemini
+
+Po wykonaniu noda wejdź w **Output**. Tekst modelu znajdziesz pod ścieżką:
+- `candidates[0].content.parts[0].text`
+
+To tę wartość przekazujemy dalej do kolejnych nodów `Set` lub `Switch`.
 
 ## Ćwiczenie 1 (ok. 15 min): FAQ z jednego dokumentu
 
