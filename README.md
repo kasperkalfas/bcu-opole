@@ -25,9 +25,11 @@ Celem jest nauczenie uczestników:
 
 Uwzględniono wyłącznie istotne pliki projektowe (bez plików ignorowanych przez `.gitignore`):
 
-- `grafika.md` — ćwiczenia z OpenArt (w tym zadania praktyczne krok po kroku),
-- `n8n.md` — szybkie ćwiczenia warsztatowe n8n + darmowy Gemini (30 minut, poziom podstawowy),
-- `claude.md`, `gamma.app.md`, `notebookLLM.md` — dodatkowe materiały i scenariusze pracy,
+- [`grafika.md`](./grafika.md) — ćwiczenia z OpenArt (w tym zadania praktyczne krok po kroku),
+- [`n8n.md`](./n8n.md) — szybkie ćwiczenia warsztatowe n8n + darmowy Gemini (30 minut, poziom podstawowy),
+- [`claude.md`](./claude.md) — ćwiczenia z Claude: prompting P.K.Z.O., logowanie, skille, projekty, style pisania i praca z Connections,
+- [`gamma.app.md`](./gamma.app.md) — scenariusz tworzenia prezentacji ofertowej w Gamma.app z gotowym promptem i strukturą slajdów,
+- [`notebookLLM.md`](./notebookLLM.md) — ćwiczenia z NotebookLM: praca na PDF, quiz z materiału i generowanie podcastu,
 - `zasoby/obrazki/` — obrazy do ćwiczeń edycji i kompozycji,
 - `zasoby/pdf/` — materiały źródłowe PDF do pracy warsztatowej,
 - `zasoby/teskt/` — wersje tekstowe wybranych materiałów,
@@ -60,10 +62,28 @@ W części automatyzacji uczestnicy uczą się:
 3. Przygotowuj kilka wersji wyników i porównuj efekty.
 4. Wybieraj najlepsze rezultaty pod kątem czytelności i zastosowania zawodowego.
 
+## Linki do wszystkich plików `.md`
+
+### Główne materiały
+- [`README.md`](./README.md)
+- [`grafika.md`](./grafika.md)
+- [`n8n.md`](./n8n.md)
+- [`claude.md`](./claude.md)
+- [`gamma.app.md`](./gamma.app.md)
+- [`notebookLLM.md`](./notebookLLM.md)
+
+### Skille dla grup docelowych
+- [`zasoby/skills/student/SKILL.md`](./zasoby/skills/student/SKILL.md)
+- [`zasoby/skills/przedsiebiorca/SKILL.md`](./zasoby/skills/przedsiebiorca/SKILL.md)
+- [`zasoby/skills/sekretariat/SKILL.md`](./zasoby/skills/sekretariat/SKILL.md)
+- [`zasoby/skills/urzednik/SKILL.md`](./zasoby/skills/urzednik/SKILL.md)
+
 ## Efekt szkolenia
 
 Po ukończeniu ćwiczeń uczestnik na poziomie podstawowym potrafi samodzielnie:
 - przygotować prostą grafikę użytkową,
 - poprawić ją zgodnie z celem komunikacyjnym,
 - dopasować format do kanału publikacji,
+- uruchomić prosty workflow AI w n8n,
+- tworzyć materiały i komunikaty z użyciem Claude, Gamma.app i NotebookLM,
 - świadomie korzystać z AI w codziennej pracy biurowej, edukacyjnej i biznesowej.
