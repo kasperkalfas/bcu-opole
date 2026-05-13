@@ -1,0 +1,189 @@
+SKOMPLIKOWANA PROCEDURA EWAKUACJI NA WYPADEK POŻARU
+Urząd Miejski
+
+1. CEL I ZAKRES PROCEDURY
+
+1.1. Celem procedury jest zapewnienie bezpiecznej, kontrolowanej i możliwie szybkiej ewakuacji wszystkich osób przebywających w budynku Urzędu Miejskiego w przypadku pożaru, zadymienia, zagrożenia wybuchem lub innego zdarzenia skutkującego koniecznością opuszczenia obiektu.
+1.2. Procedura obejmuje pracowników urzędu, interesantów, dostawców, podwykonawców, osoby z niepełnosprawnościami, osoby starsze, kobiety w ciąży oraz osoby czasowo o ograniczonej mobilności.
+1.3. Procedura dotyczy wszystkich stref obiektu: kondygnacji biurowych, archiwów, serwerowni, sal konferencyjnych, piwnic, garaży, zaplecza socjalnego i stref technicznych.
+
+2. PODSTAWOWE DEFINICJE
+
+2.1. Alarm pożarowy I stopnia – sygnał wstępny uruchamiany po wykryciu potencjalnego zagrożenia.
+2.2. Alarm pożarowy II stopnia – potwierdzony alarm skutkujący obowiązkową ewakuacją.
+2.3. Dowódca Ewakuacji (DE) – osoba koordynująca ewakuację do czasu przybycia PSP.
+2.4. Koordynator Piętra (KP) – osoba odpowiedzialna za ewakuację przypisanej kondygnacji.
+2.5. Punkt Zbiórki (PZ) – wyznaczone miejsce poza budynkiem, gdzie prowadzi się weryfikację obecności.
+
+3. STRUKTURA ODPOWIEDZIALNOŚCI
+
+3.1. Burmistrz/Prezydent Miasta:
+- zatwierdza procedurę i nadzoruje jej wdrożenie.
+
+3.2. Sekretarz Miasta:
+- pełni funkcję zastępcy DE, gdy DE jest nieobecny.
+
+3.3. Dowódca Ewakuacji:
+- podejmuje decyzję o pełnej lub częściowej ewakuacji,
+- aktywuje zespół ewakuacyjny,
+- kontaktuje się z numerem alarmowym 112/998,
+- przekazuje informacje kierującemu działaniami ratowniczymi PSP.
+
+3.4. Koordynatorzy Pięter:
+- uruchamiają ewakuację na kondygnacjach,
+- kontrolują opuszczenie pomieszczeń,
+- zgłaszają status ewakuacji do DE.
+
+3.5. Zespół Wsparcia Ewakuacji (ZWE):
+- asystuje osobom o ograniczonej mobilności,
+- zapewnia wykorzystanie krzeseł ewakuacyjnych,
+- monitoruje drożność dróg ewakuacyjnych.
+
+3.6. Pracownicy:
+- stosują się do poleceń DE, KP i ZWE,
+- opuszczają stanowiska bez zwłoki,
+- nie wracają po rzeczy osobiste.
+
+4. WYKRYCIE ZAGROŻENIA I URUCHOMIENIE ALARMU
+
+4.1. Każda osoba, która zauważy pożar, dym lub zapach spalenizny:
+- uruchamia najbliższy ręczny ostrzegacz pożarowy,
+- informuje ochronę/portiernię,
+- dzwoni na 112 lub 998, podając:
+  a) adres obiektu,
+  b) miejsce pożaru (piętro, pokój, strefa),
+  c) rodzaj zagrożenia,
+  d) informację o osobach poszkodowanych/uwięzionych,
+  e) swoje imię i numer telefonu.
+
+4.2. Ochrona/portiernia:
+- potwierdza sygnał z SSP,
+- uruchamia komunikat głosowy ewakuacji,
+- przekazuje informację DE,
+- otwiera bramy dojazdowe dla służb.
+
+5. SEKWENCJA EWAKUACJI
+
+5.1. Faza 0 – gotowość:
+- DE potwierdza charakter zagrożenia,
+- KP zajmują wyznaczone pozycje,
+- ZWE pobiera sprzęt ewakuacyjny.
+
+5.2. Faza 1 – ewakuacja strefy zagrożonej:
+- priorytetowo ewakuuje się kondygnację objętą pożarem,
+- następnie kondygnacje powyżej,
+- na końcu kondygnacje poniżej.
+
+5.3. Faza 2 – ewakuacja pełna:
+- uruchamiana decyzją DE lub automatycznie po alarmie II stopnia,
+- obejmuje wszystkich pracowników i interesantów.
+
+5.4. Faza 3 – potwierdzenie opuszczenia obiektu:
+- KP raportują status: „piętro czyste” albo „osoby nieodnalezione”.
+
+6. ZASADY PRZEMIESZCZANIA
+
+6.1. Zabrania się korzystania z wind.
+6.2. Ewakuacja odbywa się wyłącznie oznakowanymi klatkami schodowymi i wyjściami ewakuacyjnymi.
+6.3. Ruch odbywa się prawą stroną ciągu komunikacyjnego.
+6.4. Drzwi przeciwpożarowe pozostawia się zamknięte po przejściu.
+6.5. W strefie zadymienia:
+- poruszać się nisko przy podłodze,
+- osłaniać drogi oddechowe wilgotną tkaniną,
+- nie otwierać drzwi, które są gorące.
+
+7. PROCEDURA DLA OSÓB ZE SZCZEGÓLNYMI POTRZEBAMI
+
+7.1. Każde piętro posiada wyznaczony punkt oczekiwania na ewakuację wspomaganą.
+7.2. ZWE przydziela co najmniej 2 osoby do asysty jednej osobie o ograniczonej mobilności.
+7.3. W przypadku braku możliwości natychmiastowego transportu:
+- osoba pozostaje w strefie bezpiecznej,
+- KP zgłasza dokładną lokalizację do DE i PSP,
+- utrzymywany jest kontakt głosowy.
+
+8. OCHRONA DANYCH, DOKUMENTACJI I INFRASTRUKTURY KRYTYCZNEJ
+
+8.1. Priorytetem jest życie i zdrowie ludzi, nie mienie.
+8.2. Administrator IT po ogłoszeniu alarmu II stopnia:
+- inicjuje procedurę awaryjnego zabezpieczenia systemów,
+- wykonuje automatyczne zamknięcie sesji,
+- odłącza zasilanie urządzeń zgodnie z instrukcją BCP.
+8.3. Archiwum i kancelaria tajna:
+- stosują plan awaryjnego zabezpieczenia nośników,
+- bez opóźniania ewakuacji personelu.
+
+9. PUNKT ZBIÓRKI I WERYFIKACJA STANU OSOBOWEGO
+
+9.1. Główny Punkt Zbiórki: plac przed budynkiem urzędu, strefa A.
+9.2. Zapasowy Punkt Zbiórki: parking miejski, strefa B.
+9.3. Kierownicy komórek organizacyjnych:
+- sprawdzają obecność pracowników,
+- zgłaszają braki do KP,
+- KP przekazują zbiorczy raport DE.
+9.4. Interesanci są ewidencjonowani przez punkt informacyjny na podstawie rejestru wejść.
+
+10. WSPÓŁPRACA ZE SŁUŻBAMI RATOWNICZYMI
+
+10.1. DE lub osoba wyznaczona oczekuje przed budynkiem na PSP i przekazuje:
+- mapę obiektu,
+- informację o źródle pożaru,
+- status ewakuacji,
+- lokalizację osób zaginionych,
+- lokalizację hydrantów, zaworów gazu, głównych wyłączników prądu.
+
+10.2. Po przejęciu akcji przez PSP wszyscy pracownicy bezwzględnie wykonują polecenia kierującego działaniami ratowniczymi.
+
+11. ZAKAZ POWROTU DO BUDYNKU
+
+11.1. Powrót jest możliwy wyłącznie po formalnej zgodzie PSP i decyzji DE.
+11.2. Samowolny powrót do budynku stanowi ciężkie naruszenie zasad bezpieczeństwa.
+
+12. TRYB KOMUNIKACJI KRYZYSOWEJ
+
+12.1. Kanały komunikacji:
+- system DSO,
+- telefony służbowe,
+- krótkofalówki ochrony,
+- SMS alarmowy do kadry kierowniczej.
+
+12.2. Komunikaty muszą być krótkie, jednoznaczne i zawierać:
+- rodzaj zagrożenia,
+- zakres ewakuacji,
+- trasę wyjścia,
+- punkt zbiórki.
+
+13. POSTĘPOWANIE PO EWAKUACJI
+
+13.1. DE sporządza raport wstępny do 2 godzin od zdarzenia.
+13.2. Pełny raport powypadkowy przygotowuje się do 72 godzin, obejmując:
+- przebieg zdarzenia,
+- czasy reakcji,
+- problemy organizacyjne,
+- działania naprawcze i prewencyjne.
+13.3. W razie potrzeby uruchamia się wsparcie psychologiczne dla pracowników i interesantów.
+
+14. SZKOLENIA I ĆWICZENIA
+
+14.1. Szkolenie wstępne PPOŻ dla każdego nowego pracownika – przed dopuszczeniem do pracy.
+14.2. Ćwiczenia ewakuacyjne pełne – minimum 1 raz w roku.
+14.3. Ćwiczenia scenariuszowe (pożar w archiwum, pożar w serwerowni, zadymienie klatki schodowej) – minimum 2 razy w roku.
+14.4. Wnioski z ćwiczeń są obowiązkowo wdrażane i dokumentowane.
+
+15. LISTA KONTROLNA DLA KOORDYNATORA PIĘTRA
+
+- Odebrano sygnał alarmu i potwierdzono rozpoczęcie ewakuacji.
+- Sprawdzono wszystkie pomieszczenia, w tym toalety i zaplecza.
+- Zamknięto drzwi po przejściu ludzi.
+- Skierowano osoby do właściwej klatki schodowej.
+- Zgłoszono osoby wymagające wsparcia.
+- Raport przekazano do DE.
+
+16. POSTANOWIENIA KOŃCOWE
+
+16.1. Procedura obowiązuje wszystkich użytkowników obiektu.
+16.2. Za aktualizację procedury odpowiada Inspektor Ochrony Przeciwpożarowej we współpracy z Sekretarzem Miasta.
+16.3. Aktualizacja dokumentu następuje nie rzadziej niż raz na 12 miesięcy lub po każdym incydencie wymagającym ewakuacji.
+
+Data wdrożenia: ____________________
+Numer wersji: ______________________
+Zatwierdził: ________________________

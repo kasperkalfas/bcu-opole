@@ -1,0 +1,160 @@
+═══════════════════════════════════════════════════════════════════════════════════
+PRZYPADEK UŻYCIA: TEMPERATURA I SYSTEM PROMPT W MODELU AI
+═══════════════════════════════════════════════════════════════════════════════════
+
+📚 OPIS DOŚWIADCZENIA
+
+To praktyczne ćwiczenie pokazuje, jak różne parametry modelu AI wpływają na styl 
+i charakter odpowiedzi. Używamy tego samego modelu bazowego (Bielik 4.5b), ale 
+konfigurujemy go na dwa różne sposoby.
+
+
+🔧 KONFIGURACJA MODELI
+
+Model 1: BIELIK-URZEDNIK
+├── Model bazowy: SpeakLeash/bielik-4.5b-v3.0-instruct:Q8_0
+├── Temperatura: 0.1 (niska - deterministyczna, przewidywalna)
+└── System prompt: "Jesteś precyzyjnym urzędnikiem. Odpowiadasz konkretnie i krótko."
+
+Model 2: BIELIK-POETA
+├── Model bazowy: SpeakLeash/bielik-4.5b-v3.0-instruct:Q8_0 (ten sam!)
+├── Temperatura: 0.8 (wysoka - kreatywna, losowa)
+└── System prompt: "Jesteś kreatywnym poetą. Uwielbiasz barwne opisy, rymy i metafory."
+
+
+📝 PROMPT (identyczny dla obu modeli):
+"Napisz o braku prądu w czwartek 10-12"
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+EKSPERYMENT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+echo "FROM SpeakLeash/bielik-4.5b-v3.0-instruct:Q8_0" > TempModel && echo "PARAMETER temperature 0.1" >> TempModel && echo "SYSTEM Jesteś precyzyjnym urzędnikiem. Odpowiadasz konkretnie i krótko." >> TempModel && ollama create bielik-urzednik -f TempModel && rm TempModel
+echo "FROM SpeakLeash/bielik-4.5b-v3.0-instruct:Q8_0" > TempPoeta && echo "PARAMETER temperature 0.8" >> TempPoeta && echo "SYSTEM Jesteś kreatywnym poetą. Uwielbiasz barwne opisy, rymy i metafory." >> TempPoeta && ollama create bielik-poeta -f TempPoeta && rm TempPoeta
+
+ollama run bielik-urzednik "Napisz o braku prądu w czwartek 10-12"
+ollama run bielik-poeta "Napisz o braku prądu w czwartek 10-12"
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+WYNIKI EKSPERYMENTU
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+┌─────────────────────────────────────────────────────────────────────────────────┐
+│ ODPOWIEDŹ 1: BIELIK-URZEDNIK (temperatura 0.1)                                  │
+└─────────────────────────────────────────────────────────────────────────────────┘
+
+W czwartek od godziny 10:00 do 12:00 nie będzie prądu w całym mieście.
+
+
+📊 ANALIZA:
+✓ Krótka, konkretna odpowiedź
+✓ Tylko faktyczne informacje
+✓ Brak ozdobników i emocji
+✓ Język urzędowy, formalny
+✓ Idealna do komunikatów administracyjnych
+
+
+┌─────────────────────────────────────────────────────────────────────────────────┐
+│ ODPOWIEDŹ 2: BIELIK-POETA (temperatura 0.8)                                     │
+└─────────────────────────────────────────────────────────────────────────────────┘
+
+W czwartek, 10-12, ciemność spowiła miasto, a w sercach mieszkańców zagościł 
+niepokój. Brak prądu, jak czarna dziura, pochłaniał światło i ciepło, pozostawiając 
+jedynie ciszę, która odbijała się od pustych ulic.
+
+
+📊 ANALIZA:
+✓ Poetycki, emocjonalny język
+✓ Użycie metafor ("czarna dziura", "ciemność spowiła")
+✓ Obrazowe opisy ("serca mieszkańców", "puste ulice")
+✓ Dramatyzacja sytuacji
+✓ Znacznie dłuższa i bardziej opisowa
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+WNIOSKI DLA SZKOLENIA
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎯 TEMPERATURA - co to jest?
+
+Temperatura to parametr kontrolujący "kreatywność" modelu:
+
+• TEMPERATURA 0.0-0.3 (niska)
+  → Przewidywalne, konserwatywne odpowiedzi
+  → Wybiera najbardziej prawdopodobne słowa
+  → Idealne dla: raportów, dokumentacji, odpowiedzi technicznych
+  → Przykład: komunikaty urzędowe, instrukcje, FAQ
+
+• TEMPERATURA 0.7-1.0 (wysoka)
+  → Kreatywne, zróżnicowane odpowiedzi
+  → Eksperymentuje ze słownictwem
+  → Idealne dla: burzy mózgów, content marketingu, storytellingu
+  → Przykład: posty na social media, opisy produktów, artykuły
+
+
+💡 SYSTEM PROMPT - czemu jest ważny?
+
+System prompt to "osobowość" AI - określa:
+✓ Rolę (ekspert, asystent, nauczyciel)
+✓ Ton wypowiedzi (formalny, przyjazny, techniczny)
+✓ Styl komunikacji (zwięzły, opisowy, edukacyjny)
+✓ Zachowanie (pomocny, krytyczny, kreatywny)
+
+
+⚠️ "HALUCYNACJE" W AI - czym są?
+
+Uwaga! Oba modele mogą "halucynować" - czyli generować informacje, które 
+brzmią przekonująco, ale nie są prawdziwe.
+
+W naszym przykładzie:
+• Urzędnik napisał "w całym mieście" - informacja nieprawdziwa (nie było to w promptcie)
+• Poeta dodał dramatyczne szczegóły o "pustych ulicach" - zmyślone
+
+🔴 ZAWSZE WERYFIKUJ FAKTY generowane przez AI, szczególnie:
+   - Daty, liczby, statystyki
+   - Nazwy własne, miejsca, wydarzenia
+   - Cytaty i referencje
+   - Informacje techniczne lub medyczne
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ZASTOSOWANIA PRAKTYCZNE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+👔 DLA URZĘDNIKÓW:
+   Model "urzędnik" → komunikaty, pisma urzędowe, protokoły
+
+🏢 DLA PRZEDSIĘBIORCÓW:
+   Model "urzędnik" → umowy, regulaminy, polityka prywatności
+   Model "poeta" → posty social media, opisy produktów, newslettery
+
+🎓 DLA NAUCZYCIELI/STUDENTÓW:
+   Model "urzędnik" → notatki, streszczenia, definicje
+   Model "poeta" → eseje, opowiadania, projekty kreatywne
+
+📧 DLA SEKRETARIATU:
+   Model "urzędnik" → komunikaty dla rodziców, ogłoszenia, procedury
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ZADANIE DO WYKONANIA NA SZKOLENIU
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Przeczytaj obie odpowiedzi na głos
+2. Zastanów się: którą odpowiedź użyłbyś w swojej pracy? Dlaczego?
+3. Wymyśl własny prompt i przetestuj oba modele
+4. Porównaj wyniki i podziel się spostrzeżeniami z grupą
+
+
+🤔 PYTANIA DO DYSKUSJI:
+
+• Czy model "poeta" dobrze nadaje się do tworzenia ogłoszeń na Facebook?
+• Czy model "urzędnik" może pisać emaile do klientów?
+• Kiedy wysoka temperatura może być problemem?
+• Jak rozpoznać "halucynacje" w odpowiedziach AI?
+
+
+═══════════════════════════════════════════════════════════════════════════════════
+Materiały szkoleniowe © 2026 | Podstawy AI dla każdego
+═══════════════════════════════════════════════════════════════════════════════════

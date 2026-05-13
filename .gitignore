@@ -216,3 +216,5 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+prompts/claude01.txt
+prompts/intro.txt

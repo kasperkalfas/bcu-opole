@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl *)",
+      "Bash(head *)",
+      "Bash(python3 *)",
+      "Bash(import *)",
+      "Bash(from *)",
+      "Bash(API_KEY *)",
+      "Bash(completions *)",
+      "Bash(lambda *)",
+      "Bash(] *)",
+      "Bash(for *)"
+    ]
+  }
+}
