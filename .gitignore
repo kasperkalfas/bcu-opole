@@ -218,3 +218,7 @@ __marimo__/
 .streamlit/secrets.toml
 prompts/claude01.txt
 prompts/intro.txt
+prompts/gamma.app.txt
+prompts/n8n.txt
+.gitignore
+prompts/noteboLLM02.txt

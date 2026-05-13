@@ -213,3 +213,138 @@ Format: czytelne sekcje, krótkie odpowiedzi.
 Wskazówka dla uczestników: twórz osobne projekty dla różnych obszarów (np. projekty unijne, sprawy studenckie), a w każdym projekcie osobne czaty do konkretnych zadań.
 
 Oczekiwany efekt: uczestnik potrafi użyć Claude Projects do pracy na wielu dokumentach i rozmowach, z zachowaniem wspólnego kontekstu oraz ze skillem student.
+
+## Zadanie 5: Claude Connections — konfiguracja i praktyka ze skillami
+
+Cel: podłączyć usługi zewnętrzne do Claude i wykonywać realne zadania (email, spotkanie, dokumenty, rezerwacje, nauka).
+
+Connections do ćwiczenia:
+- Gmail
+- Google Calendar
+- Google Drive
+- Booking
+- Microsoft Learn
+
+### Zadanie 1: Jak stworzyć Connections w Claude
+
+### A. Przygotowanie kont (uczestnicy mają nowe konta Gmail)
+1. Zaloguj się na nowe konto Gmail.
+2. Otwórz Gmail, Calendar i Drive przynajmniej raz, żeby konto było aktywne.
+3. Wyślij testowy email do siebie i utwórz 1 testowe wydarzenie w Kalendarzu.
+4. Utwórz folder `Szkolenie_AI` w Google Drive i dodaj jeden plik testowy.
+
+### B. Podłączanie integracji w Claude (uniwersalny schemat)
+1. Wejdź do Claude.ai.
+2. Otwórz **Settings** -> **Connections**.
+3. Kliknij **Add connection**.
+4. Wybierz usługę (Gmail / Google Calendar / Google Drive / Booking / Microsoft Learn).
+5. Kliknij **Connect**.
+6. Zaloguj się do wybranego konta.
+7. Zatwierdź uprawnienia dostępu.
+8. Sprawdź status **Connected**.
+9. Powtórz dla pozostałych usług.
+
+### C. Typowe problemy i szybkie poprawki
+- Brak autoryzacji: rozłącz integrację i podłącz ponownie.
+- Złe konto Google: wyloguj inne konta z przeglądarki i podłącz właściwe.
+- Brak dostępu w organizacji: potrzebna zgoda administratora.
+
+## Zadanie 2: Jak używać promptów z poszczególnymi skillami i Connections
+
+Zasada promptu: zawsze podaj
+1) jaki skill ma być użyty,
+2) z których Connections Claude ma skorzystać,
+3) jaki ma być format odpowiedzi.
+
+### 1) Skill student + Gmail (pisanie emaila)
+```text
+Używaj zasad ze skilla: student.
+Skorzystaj z Gmail.
+Zadanie:
+1) Przygotuj szkic emaila do prowadzącego z prośbą o konsultację.
+2) Temat: „Prośba o konsultację – [nazwa przedmiotu]”.
+3) Dodaj 3 propozycje terminów konsultacji.
+4) Ton: uprzejmy i krótki.
+Format: temat wiadomości + treść emaila.
+```
+
+### 2) Skill student + Google Calendar (tworzenie spotkania)
+```text
+Używaj zasad ze skilla: student.
+Skorzystaj z Google Calendar.
+Zadanie:
+1) Utwórz wydarzenie „Nauka do zaliczenia: [przedmiot]”.
+2) Termin: jutro, 18:00-19:30.
+3) Dodaj przypomnienia: 1 dzień wcześniej i 30 minut wcześniej.
+4) Opis wydarzenia: lista 3 tematów do powtórki.
+Format odpowiedzi: potwierdzenie + szczegóły wydarzenia.
+```
+
+### 3) Skill student + Gmail + Google Calendar (email + spotkanie)
+```text
+Używaj zasad ze skilla: student.
+Skorzystaj z Gmail i Google Calendar.
+Zadanie:
+1) Napisz email do członków zespołu projektowego o spotkaniu.
+2) Zaproponuj spotkanie online na 45 minut w tym tygodniu.
+3) Utwórz wydarzenie w kalendarzu z tytułem „Spotkanie projektowe”.
+4) Dodaj agendę: podział zadań, terminy, ryzyka.
+Format: najpierw treść emaila, potem podsumowanie spotkania z kalendarza.
+```
+
+### 4) Skill student + Google Drive
+```text
+Używaj zasad ze skilla: student.
+Skorzystaj z Google Drive.
+Zadanie:
+1) Przeanalizuj pliki z folderu „Szkolenie_AI”.
+2) Zrób krótkie podsumowanie każdego pliku.
+3) Wypisz 5 rzeczy do nauki z tych materiałów.
+Format: tabela (plik, opis, co zapamiętać).
+```
+
+### 5) Skill urzednik + Booking + Google Calendar
+```text
+Używaj zasad ze skilla: urzednik.
+Skorzystaj z Booking i Google Calendar.
+Zadanie:
+1) Zbierz planowane wizyty/rezerwacje z najbliższych 14 dni.
+2) Wskaż konflikty terminów.
+3) Zaproponuj nowe terminy i gotowy komunikat do interesantów.
+Format: tabela + sekcja „Proponowana wiadomość”.
+```
+
+### 6) Skill przedsiebiorca + Microsoft Learn + Google Calendar
+```text
+Używaj zasad ze skilla: przedsiebiorca.
+Skorzystaj z Microsoft Learn i Google Calendar.
+Zadanie:
+1) Zaproponuj ścieżkę nauki 2 umiejętności AI dla początkujących.
+2) Rozpisz harmonogram nauki na 4 tygodnie.
+3) Dodaj kamienie milowe i terminy w kalendarzu.
+Format: plan tygodniowy + checklista postępu.
+```
+
+Wskazówka dla uczestników: najpierw ćwicz jeden Connection (Gmail), potem łącz 2-3 naraz (np. Gmail + Calendar + Drive).
+
+Oczekiwany efekt: uczestnik potrafi podłączyć Connections w Claude, napisać email, utworzyć spotkanie i realizować bardziej złożone zadania z użyciem skilli.
+
+## Zadanie 6: Style pisania w Claude.ai
+
+Cel: nauczyć uczestników, jak tym samym tematem pisać w różnych stylach.
+
+### Proste zadanie 1: Ten sam komunikat w 3 stylach
+
+Polecenie dla uczestnika:
+```text
+Napisz ten sam komunikat w 3 wersjach:
+1) formalnej,
+2) neutralnej,
+3) przyjaznej.
+Temat: informacja o zmianie terminu zajęć.
+lub Temat: przypomnienie o terminie dostarczenia dokumentów.
+
+Każda wersja: max 70 słów.
+```
+
+Oczekiwany efekt: uczestnik potrafi przełączać style pisania i używać własnego custom style w codziennej komunikacji.
