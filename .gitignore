@@ -222,3 +222,4 @@ prompts/gamma.app.txt
 prompts/n8n.txt
 .gitignore
 prompts/noteboLLM02.txt
+prompts/*.txt
