@@ -67,9 +67,17 @@ Sekretariat, urząd, przedsiębiorcy, studenci.
 ### Krok po kroku
 
 1. Dodaj `Manual Trigger`.
-2. Dodaj `Set` i utwórz pole tekstowe `tekst_zrodlowy`.
-   - Wklej dłuższy tekst (np. regulamin lub komunikat).
-3. Dodaj `HTTP Request` i ustaw konfigurację wspólną z sekcji wyżej.
+   - Ten node pozwala uruchamiać ćwiczenie ręcznie podczas warsztatu.
+
+2. Dodaj node `Set` i nazwij go np. `Dane wejściowe FAQ`.
+   - Włącz tryb **Manual Mapping**.
+   - Dodaj pole typu string: `tekst_zrodlowy`.
+   - Wklej dłuższy tekst, np. regulamin, komunikat lub fragment procedury.
+   - Upewnij się, że tekst ma minimum kilka zdań, żeby FAQ było sensowne.
+
+3. Dodaj `HTTP Request (Gemini)` i ustaw konfigurację wspólną z sekcji wyżej.
+   - Najważniejsze: URL modelu, Query Param `key`, JSON body.
+
 4. W Body JSON wstaw:
 
 ```json
@@ -86,11 +94,22 @@ Sekretariat, urząd, przedsiębiorcy, studenci.
 }
 ```
 
-5. Dodaj kolejny `Set` o nazwie `Wynik FAQ`.
-6. Utwórz pole `faq` i ustaw wartość:
-   `{{$json.candidates[0].content.parts[0].text}}`
-7. Kliknij `Execute Workflow`.
-8. Pokaż uczestnikom gotowe FAQ.
+5. Uruchom sam node `HTTP Request` przyciskiem **Execute step**.
+   - Dzięki temu od razu sprawdzisz, czy API odpowiada poprawnie.
+   - Jeśli jest błąd, popraw najpierw klucz lub JSON, zanim przejdziesz dalej.
+
+6. Dodaj kolejny `Set` o nazwie `Wynik FAQ`.
+   - Dodaj pole `faq` i wpisz expression:
+   - `{{$json.candidates[0].content.parts[0].text}}`
+   - To pole wyciąga samą treść odpowiedzi modelu bez dodatkowych danych technicznych.
+
+7. Kliknij `Execute Workflow` i przejdź do output noda `Wynik FAQ`.
+   - Skopiuj gotowy tekst FAQ i pokaż uczestnikom.
+   - Jeśli odpowiedź jest za długa lub za trudna, zmień prompt i uruchom ponownie.
+
+8. Wariant szybki na żywo (opcjonalnie):
+   - Zmień tylko `tekst_zrodlowy` na inny temat.
+   - Pokaż, że ten sam workflow działa dla różnych dokumentów bez przebudowy nodów.
 
 ### Efekt
 Uczestnik widzi, jak z jednego tekstu szybko przygotować gotowe pytania i odpowiedzi dla odbiorców.
@@ -109,9 +128,16 @@ Sekretariat i administracja (także studenci i przedsiębiorcy).
 ### Krok po kroku
 
 1. Dodaj `Manual Trigger`.
-2. Dodaj `Set` i utwórz pole `wiadomosc`.
-   - Wklej przykładową wiadomość, np. prośbę o pilny termin lub zwykłe zapytanie.
-3. Dodaj `HTTP Request` i użyj tej samej konfiguracji co wcześniej.
+   - To punkt startowy demonstracji, uruchamiany ręcznie przez prowadzącego.
+
+2. Dodaj `Set` i nazwij node np. `Wiadomość wejściowa`.
+   - Włącz **Manual Mapping**.
+   - Dodaj pole string `wiadomosc`.
+   - Wklej jedną wiadomość testową od interesanta/klienta/studenta.
+
+3. Dodaj `HTTP Request (Gemini)` i użyj tej samej konfiguracji co wcześniej.
+   - Zmieniasz tylko prompt w body JSON.
+
 4. W Body JSON wstaw:
 
 ```json
@@ -128,19 +154,34 @@ Sekretariat i administracja (także studenci i przedsiębiorcy).
 }
 ```
 
-5. Dodaj `Set` o nazwie `Kategoria`.
-6. Utwórz pole `model_output`:
-   `{{$json.candidates[0].content.parts[0].text}}`
-7. Utwórz pole `kategoria` z wyrażeniem:
-   `{{ $json.model_output.toLowerCase().includes('pilne') ? 'pilne' : ($json.model_output.toLowerCase().includes('normalne') ? 'normalne' : 'do_archiwum') }}`
-8. Dodaj `Switch` i ustaw reguły:
-   - jeśli `kategoria` = `pilne`
-   - jeśli `kategoria` = `normalne`
-   - jeśli `kategoria` = `do_archiwum`
-9. Do każdej gałęzi możesz dodać prosty `Set` z komunikatem:
-   - pilne: „Przekaż do natychmiastowej obsługi”.
-   - normalne: „Obsłuż w standardowej kolejce”.
-   - do_archiwum: „Zapisz i zamknij bez dalszych działań”.
+5. Uruchom `HTTP Request` przez **Execute step** i sprawdź odpowiedź modelu.
+   - Upewnij się, że model zwrócił linię z `Kategoria:`.
+
+6. Dodaj `Set` o nazwie `Kategoria`.
+   - Pole `model_output`:
+   - `{{$json.candidates[0].content.parts[0].text}}`
+   - Pole `kategoria`:
+   - `{{ $json.model_output.toLowerCase().includes('pilne') ? 'pilne' : ($json.model_output.toLowerCase().includes('normalne') ? 'normalne' : 'do_archiwum') }}`
+
+7. Dodaj `Switch` i skonfiguruj 3 warunki dla pola `kategoria`:
+   - równe `pilne`
+   - równe `normalne`
+   - równe `do_archiwum`
+
+8. Do każdej gałęzi podłącz prosty `Set` z decyzją operacyjną:
+   - `pilne` → „Przekaż do natychmiastowej obsługi”.
+   - `normalne` → „Obsłuż w standardowej kolejce”.
+   - `do_archiwum` → „Zapisz i zamknij bez dalszych działań”.
+
+9. Uruchom cały workflow `Execute Workflow`.
+   - Pokaż, do której gałęzi trafiła wiadomość.
+   - Zmień treść `wiadomosc` i uruchom ponownie, aby pokazać zmianę klasyfikacji.
+
+10. Wersja demonstracyjna dla różnych grup (opcjonalnie):
+   - student: wiadomość o terminie zaliczenia,
+   - przedsiębiorca: zapytanie o ofertę,
+   - sekretariat/urząd: prośba o pilne zaświadczenie.
+   Dzięki temu uczestnicy widzą uniwersalność tego samego workflow.
 
 ### Efekt
 Uczestnik widzi prosty mechanizm triage wiadomości, który można później rozbudować.
@@ -161,10 +202,27 @@ Dzień dobry, jutro mam termin złożenia dokumentów i brakuje mi jednego podpi
 
 ## Najczęstsze problemy i szybkie rozwiązania
 
-- Brak odpowiedzi z API: sprawdź poprawność klucza Gemini.
-- Błąd 400: sprawdź, czy Body JSON jest poprawny.
+- Brak odpowiedzi z API: sprawdź poprawność klucza Gemini i czy klucz jest aktywny.
+- Błąd 400: sprawdź, czy Body JSON jest poprawny i nie ma brakujących nawiasów.
+- Błąd 403: klucz nie ma uprawnień lub został błędnie skopiowany.
 - Pusty wynik: sprawdź ścieżkę `candidates[0].content.parts[0].text`.
 - Switch nie działa: sprawdź, czy pole `kategoria` ma dokładnie jedną z 3 wartości.
+
+## Szybka checklista prowadzącego przed zajęciami
+
+- Mam aktywny klucz Gemini i zapisany w bezpiecznym miejscu.
+- W n8n działa `Manual Trigger` i mogę uruchomić workflow.
+- Node `HTTP Request` ma poprawny URL i Query Param `key`.
+- W node `Set` używam poprawnych nazw pól: `tekst_zrodlowy`, `wiadomosc`.
+- Potrafię odczytać wynik z `candidates[0].content.parts[0].text`.
+- Mam przygotowane 2-3 teksty zapasowe do demo.
+
+## Co mówić uczestnikom podczas pokazu (wersja bardzo prosta)
+
+- „Najpierw dodajemy dane wejściowe w `Set`.”
+- „Potem wysyłamy je do Gemini przez `HTTP Request`.”
+- „Na końcu odbieramy wynik i podejmujemy decyzję w `Switch`.”
+- „Nie budujemy nic skomplikowanego — celem jest zrozumienie schematu działania.”
 
 ## Co uczestnik umie po warsztacie
 
